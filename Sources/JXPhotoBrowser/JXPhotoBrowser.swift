@@ -141,7 +141,6 @@ open class JXPhotoBrowser: UIViewController, UIViewControllerTransitioningDelega
         super.viewDidLoad()
         
         automaticallyAdjustsScrollViewInsets = false
-        hideNavigationBar(true)
         
         browserView.photoBrowser = self
         transitionAnimator.photoBrowser = self
@@ -167,11 +166,6 @@ open class JXPhotoBrowser: UIViewController, UIViewControllerTransitioningDelega
         pageIndicator?.reloadData(numberOfItems: numberOfItems(), pageIndex: pageIndex)
     }
     
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        hideNavigationBar(true)
-    }
-    
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.delegate = previousNavigationControllerDelegate
@@ -179,11 +173,6 @@ open class JXPhotoBrowser: UIViewController, UIViewControllerTransitioningDelega
             view.addSubview(indicator)
             indicator.setup(with: self)
         }
-    }
-    
-    open override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        hideNavigationBar(false)
     }
     
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
