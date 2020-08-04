@@ -84,9 +84,9 @@ open class JXPhotoBrowserImageCell: UIView, UIScrollViewDelegate, UIGestureRecog
         addGestureRecognizer(doubleTap)
         
         // 单击手势
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(onSingleTap(_:)))
-        singleTap.require(toFail: doubleTap)
-        addGestureRecognizer(singleTap)
+//        let singleTap = UITapGestureRecognizer(target: self, action: #selector(onSingleTap(_:)))
+//        singleTap.require(toFail: doubleTap)
+//        addGestureRecognizer(singleTap)
     }
     
     // 长按事件
